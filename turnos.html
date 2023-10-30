@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('LgMlN6355RCg1pZtD')</script>
+
+</head>
+<body class="bodyTurnos">
+    <header class="header">
+        <p class="logo">CLINICA MEDICA LEJARRAGA</p>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar" >
+          <a href="index.html" style="--i:0">INICIO</a>
+          <a href="turnos.html" style="--i:1" >TURNOS</a>
+          <a href="staff.html" style="--i:2">STAFF</a>
+          <a href="recetas.html" style="--i:3">RECETAS</a>
+          <a href="contacto.html" style="--i:4">CONTACTO</a>
+        </nav>
+    </header>
+
+    <h1 class="tituloConsentimiento">CONSENTIMIENTO INFORMADO DE USO DE LOS DATOS PERSONALES</h1><br>
+    <section class="textoConsentimiento">
+        <p>La CLINICA MEDICA LEJARRAGA - podrá recoger y procesar sus Datos Personales (incluyendo los datos de salud) 
+            para las siguientes finalidades:</p> <br>
+        <p>Brindar la información vinculada a los estudios requeridos tanto al médico requirente como al paciente firmante, 
+            ya sea por correo electrónico o consultando mediante un acceso exclusivo y confidencial a estos, 
+            a través del portal web de la Clínica.</p> <br>
+        <p>Llevar a cabo posibles evaluaciones / análisis de sus datos personales recopilados, 
+            siempre bajo la petición de su médico y protegiendo sus intereses.</p><br>
+        <p>Realizar análisis estadísticos anónimos con la finalidad de perfeccionar el servicio.</p>
+    </section>
+    <h1 class="tituloSolicitaTurno">ESTA SOLICITANDO UN TURNO PARA CONSULTA</h1>
+
+    <section class="textoTurno">
+        <p>Pide tu turno en Clínica Lejarraga a través de nuestro portal. <br>
+            Selecciona el profesional, el día y la hora para reservar tu consulta. </p>
+            <br>Importante: cada profesional puede o no cobrar un adicional, segun la obra social. Consultar telefonicamente. 
+        <br>
+        <br>
+        <p>También puede solicitar su turno llamándonos al 2914567891.</p>
+    </section>
+
+    <form id="form" action="" method="POST">
+        <div class="datosPersonales">
+            <label for="from_name">Nombre y Apellido</label>
+            <input type="text" id="from_name" class="input-padron" required placeholder="Juan Perez" name="from_name">
+
+            <label for="email_id">E-mail</label>
+            <input type="email" id="email_id" class="input-padron" required placeholder="email@gmail.com" name="email_id">
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" class="input-padron" required placeholder="(XXX) XXXXXXX" name="Teléfono">
+        </div>
+        <fieldset>
+            <legend class="tituloProfesional">Profesional y Obra social</legend>
+            <div class="calendario">
+                <select>
+                    <option>Dr. Perez, Juan</option>
+                    <option>Dr. Giussiani, Pablo</option>
+                    <option>Dra. Muñoz, Bárbara</option>
+                    <option>Dra. Espindola, Valeria</option>
+                    <option>Dr. Garcia, Santiago</option>
+                    <option>Dr. Sanchez, Rafael</option>
+                    <option>Dr. Lopez, Gabriel</option>
+                    <option>Dr. Gallardo, Marcelo</option>
+                    <option>Dra. Alvarez, Marta Inés</option>
+                    <option>Dra. Moratto, Gisela Melisa</option>
+                </select>
+                <select>
+                    <option>Osde</option>
+                    <option>Swiss Medical</option>
+                    <option>Accord Salud</option>
+                    <option>Pami</option>
+                    <option>Ioma</option>
+                    <option>Sancor Salud</option>
+                    <option>Ospia</option>
+                    <option>Bramed</option>
+                    <option>Particular</option>
+                    <option>Femeba</option>
+                    <option>Unión Personal</option>
+                    <option>Ommint</option>
+                    <option>Obra Social del Personal Doméstico</option>
+                    <option>Federada</option>
+                    <option>Osmedica</option>
+                    <option>Ospe</option>
+                </select>
+
+            <!-- <input type="date" name="day"> -->
+            
+            <label for="fecha">Fecha: (dd/mm/aa) </label>
+            <input type="text" id="fecha" placeholder="Ejemplo: 12/06/23">
+            <button onclick="validarFecha()">Validar Fecha</button>
+            <p id="resultado"></p>
+            <p id="error"></p>
+            <script type="text/javascript">
+                function validarFecha(){
+                    //obtener el valor del campo texto por el Id
+                    var fecha = document.getElementById("fecha").value;
+                    var resultado = document.getElementById("resultado");
+                    var error = document.getElementById("error");
+        
+                    //Expresiones regulares para validar formato de fecha:
+                    var regExpFecha = /^\d{2}\/\d{2}\/\d{2}$/;
+                    
+                    //Chequeo que el formato de la fecha sea el correcto:
+                    if (!regExpFecha.test(fecha)) {
+                        resultado.innerText="";
+                        error.innerText="Formato de fecha incorrecto. Debe ingresdar dd/mm/aa.";
+                    }else{
+                        error.innerText="";
+                        //Dividir la fecha en partes:
+                        var  partes = fecha.split("/");
+                        var dia = parseInt(partes[0], 10);
+                        var mes = parseInt(partes[1], 10);
+                        var anio = parseInt(partes[2], 10);
+        
+                        if (dia >= 1 && dia <= 31 && mes >=1 && mes <=12 && anio >=23  && anio <= 24) {
+                            resultado.innerText = "La Fecha para el turno solicitado es " + fecha +  " Seleccione la Hora: ";
+                        }else{
+                            resultado.innerText ="";
+                            error.innerText="Formato de fecha erroneo, Ingrese nuevamente la Fecha para el turno a solicitar";
+        
+                        }
+                    }
+                }
+            </script>
+            <input type="time" name="hora">
+        </div>
+        </fieldset>
+
+        <div class="contactemosOpcion">
+            <legend class="contactemosTurno">¿Cómo le gustaria que lo contactemos?</legend>
+
+            <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email">E-mail</label>
+
+            <label for="radio-telfono"><input type="radio" name="contacto" value="email" id="radio-telefono">Telefono</label>
+            
+            <label for="radio-whatsapp"><input type="radio"  name="contacto" value="email" id="radio-whatsapp" checked>WhatsApp</label>
+          
+            <label class="checkbox"><input type="checkbox" checked >¿Confirma el Turno con el Profesional seleccionado? </label>
+        </div>
+        <input type="submit" value="Solicitar Turno" id="button" class="enviar">
+        
+    </form>
+    <script src="js/app.js"></script>
+    <a href="https://api.whatsapp.com/send?phone=5492914759116" class="btn-wsp" target="_blank">
+        <i class="icon-whatsapp"></i>
+    </a>
+    <footer class="footerTurnos">
+        <p class="copyright">&copy Copyright Clínica Médica Lejarraga - 2023</p>
+    </footer>
+</body>
+</html>

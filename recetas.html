@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+
+
+</head>
+<body>
+    <header class="header">
+        <p class="logo">CLINICA MEDICA LEJARRAGA</p>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar" >
+          <a href="index.html" style="--i:0">INICIO</a>
+          <a href="turnos.html" style="--i:1" >TURNOS</a>
+          <a href="staff.html" style="--i:2">STAFF</a>
+          <a href="recetas.html" style="--i:3">RECETAS</a>
+          <a href="contacto.html" style="--i:4">CONTACTO</a>
+        </nav>
+    </header>
+    <section class="form-register">
+            <h4>SOLICITE SU RECETA MEDICA</h4>
+            <h5>Retirarla presencialmente después de los 7 días hábiles</h5>
+            <label for="nombre">Nombre</label>
+            <input class="controls" type="text" name="nombres" id="nombre" placeholder="Ingrese su Nombre" required>
+            
+            <label for="apellido">Apellido</label>
+            <input class="controls" type="text" name="nombres" id="apellido" placeholder="Ingrese su Apellido" required>
+            <label for="e-mail">E-mail</label>
+            <input class="controls" type="email" name="nombres" id="e-mail" placeholder="Ingrese su Email" required>
+            <legend>Seleccione el Nombre del Médico</legend>
+            <select class="controls">
+                <option>Dr. Perez, Juan</option>
+                <option>Dr. Giussiani, Pablo</option>
+                <option>Dra. Muñoz, Bárbara</option>
+                <option>Dra. Espindola, Valeria</option>
+                <option>Dr. Garcia, Santiago</option>
+                <option>Dr. Sanchez, Rafael</option>
+                <option>Dr. Lopez, Gabriel</option>
+                <option>Dr. Gallardo, Marcelo</option>
+                <option>Dra. Alvarez, Marta Inés</option>
+                <option>Dra. Moratto, Gisela Melisa</option>
+            </select>
+            <!-- <input class="controls" type="text" name="nombres" id="nombreMedico" placeholder="Ingrese el Nombre del Médico"> -->
+            <input class="controls" type="date" name="fecha actual" id="fechaActual" placeholder="Ingrese la fecha actual">
+            <textarea class="controls" name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Ingrese medicación, obra social y número de afiliado" maxlength="300"></textarea>
+            <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+            <form method="post" action=""> 
+                <input type="submit" class="controls" value="Solicitar Receta">
+                <!-- <button  id="boton" class="botons" type="button" value="Solicitar Receta" >Solicitar Receta</button> -->
+            </form>
+    </section>
+    
+    <a href="https://api.whatsapp.com/send?phone=5492914759116" class="btn-wsp" target="_blank">
+        <i class="icon-whatsapp"></i>
+    </a>
+    <footer class="footerRecetas">
+        <p class="copyright">&copy Copyright Clínica Médica Lejarraga - 2023</p>
+    </footer>
+
+    <!-- <script>    PARA VER LOS EVENTOS DEL BOTON A TRAVEZ DE LA CONSOLA DE INSPECCION
+        var boton = document.getElementById("boton");
+        boton.addEventListener("click", () => {console.log("Hola")})
+            
+    </script> -->
+</body>
+</html>

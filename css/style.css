@@ -1,0 +1,508 @@
+/*Se resetean los estilos*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+/*Texto del Body*/
+body {
+	min-height: 100vh;
+	/*background: url('/img/recepcion-clinica-sala-espera.jpg') no-repeat;*/
+	background-image: url("/img/recepcion-clinica-sala-espera.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: relative;
+	height: 1100px;
+	display: flex;
+	flex-direction: column;
+
+}
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 1.3rem 10%;
+	/* background: rgba(0,0,0,0.1); */
+	/* backdrop-filter: blur(50px); */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+
+.header::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(50px);
+	z-index: -1;
+}
+
+.header::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+	transition: .5s;
+}
+
+.header:hover:after{
+	left: 100%;
+}
+
+
+.logo{
+	font-size: 1.2rem;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.navbar a{
+	font-size: 1.15rem;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 1.5rem;
+
+}
+
+#check{
+	display: none;
+}
+
+.icons{
+	position: absolute;
+	right: 5%;
+	font-size: 2.8rem;
+	color:#fff;
+	cursor: pointer;
+	display: none;
+}
+
+/*Texto principal estilos modificados*/
+.presentacion{
+	width: 700px;
+	height: 500px;
+	background-color: #2e232373;
+	padding: 1rem;
+	padding-left: 3rem;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 8px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: white;
+	text-align: center;
+	box-shadow: 7px 13px 37px #000;
+	
+}
+.tituloPresentacion{
+	font-size: 1.5rem;
+	margin-bottom: 2px;
+	padding-bottom: 2px;
+
+}
+
+.textoPresentacion{
+	height: 200px;
+	width: 600px;
+	text-align: center;
+	font-size: 2 rem;
+	line-height: 30px;
+	margin-top: 1rem;
+	font-weight: 600;
+}
+.nuestraClinica{
+	font-weight: 600;
+	font-size: 1.3rem;
+}
+
+/*Mapa page principal*/
+.mapa{
+    padding: 1em 0;
+    background: linear-gradient(#96969652, rgba(212, 203,203, 0.034));
+}
+.mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+	padding-top: 2rem;
+}
+.mapa-contenido{
+    width: 940px;   
+    margin: 0 auto;
+}
+.titulo-principal{
+	padding-left: 35rem;
+	font-size: 2rem;
+
+}
+
+/*Botón de WhastApp*/
+.btn-wsp{
+	position: fixed;
+	width: 55px;
+	height: 55px;
+	line-height: 55px;
+	bottom: 30px;
+	right: 30px;
+	background: #0df053;
+	color: #fff;
+	border-radius: 50px;
+	text-align: center;
+	font-size: 30px;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+	z-index: 100;
+}
+
+.btn-wsp:hover{
+    text-decoration: none;
+    color:#0df053;
+    background-color: #fff;
+}
+.jam-whatsapp:before{
+    color:white;
+
+}
+
+.footer {
+	background-color: rgba(212, 203, 203, 0.034);
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding-bottom: 0;
+}
+.copyright{
+    color:rgb(17, 4, 4);
+    font-size: 16px;
+    margin: 10px;
+}
+
+/*ESTILOS DE LA PAGE TURNOS*/
+.bodyTurnos{
+	background: rgba(175, 160, 160, 0.74);
+	
+
+}
+.tituloConsentimiento{
+	padding-top: 4.7rem;
+	text-align: center;
+	font-size: 1.3rem;
+}
+.textoConsentimiento{
+	text-align: center;
+	font-size: 1rem;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+	margin-top: 1px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: 500;
+}
+.tituloSolicitaTurno{
+	padding-top: .7rem;
+	text-align: center;
+	font-size: 1.8rem;
+}
+.textoTurno{
+	text-align: center;
+	font-size: 1rem;
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+	margin-top: 1px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: 500;
+}
+
+
+/*EStilos del formulario para solicitar el turno médico*/
+.datosPersonales{
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+.tituloProfesional{
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+.calendario{
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+.contactemosTurno{
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+.contactemosOpcion{
+	padding-top: 0.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+.enviar{
+    width: 200px;
+    padding: 15px 100;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: rgb(117, 121, 118);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+	margin-left: 40%;
+}
+.enviar:hover{
+    background: rgb(128, 93, 93);
+    transform: scale(1.2) rotate(360deg);
+}
+.footerTurnos {
+	background-color: rgba(212, 203, 203, 0.034);
+	padding-top: 120px;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 2rem;
+}
+/* ESTILOS PARA PAGE DE STAFF MEDICO*/
+.bodyStaff{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-image: url("/img/recepcion-clinica-sala-espera.jpg");
+	/* background: rgba(175, 160, 160, 0.74); */
+	width: 100%;
+	height: 100%;
+}
+
+.tituloNuestrosProfesionales{
+	text-align: center;
+	font-size: 2rem;
+	color: #2e2323;
+	line-height: 1.6;
+	font-weight: 500;
+	margin-top: 100px;
+}
+
+.container{
+	width: 100%;
+	max-width: 1200px;
+	height: 430px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: auto;
+}
+
+.container .card {
+	width: 330px;
+	height: 430px;
+	border-radius: 8px;
+	box-shadow: 0 2px 2px rgba(19, 18, 18, 0.2);
+	/* overflow: hidden; */
+	margin: 20px; 
+	text-align: center;
+	transition: all 0.25s;
+	position: relative;
+}
+
+.container .card:hover{
+	/* transform: translateY(-55px); */
+	transform: scale(1.0);
+	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.9);
+}
+
+.container .card img{
+	width: 230px;
+	height: 320px;
+	object-fit: fill;
+}
+
+.container .card .medico{
+	font-weight: 600;
+}
+.container .card .especialidad{
+	padding:  0 1rem;
+	font-size: 1.5rem;
+	font-weight: 800;
+	color:rgb(9, 10, 10);
+}
+.footerStaff {
+	background-color: rgba(212, 203, 203, 0.034);
+	margin-top: 1200px;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 2rem;
+}
+
+/*Estilos para page de las Recetas*/
+
+.form-register{
+	width: 400px;
+	background-color: #2e232373;
+	padding: 30px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 8px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: white;
+	text-align: center;
+	box-shadow: 7px 13px 37px #000;
+	
+}
+.form-register h4{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.controls{
+	width: 100%;
+	background: #24303C;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border:1px solid #1f53c5;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 18px;
+	color: white;
+
+}
+.form-register p{
+	height: 40px;
+	text-align: center;
+	font-size: 10px;
+	line-height: 40px;
+}
+
+.form-register a{
+	text-decoration: none;
+	color: white;
+}
+.form-register a:hover{
+	text-decoration: underline;
+	color: white;
+}
+.form-register .botons{
+	width: 100%;
+	background: #1f53c5;
+	border: none;
+	padding: 12px;
+	color:white;
+	margin: 5px 0;
+	font-size: 16px;
+
+}
+.footerRecetas {
+	background-color: rgba(212, 203, 203, 0.034);
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+/*Estilos para page Contactos*/
+.bodyContactos{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-image: url("/img/recepcion-clinica-sala-espera.jpg");
+	/* background: rgba(175, 160, 160, 0.74); */
+	width: 100%;
+	height: 100%;
+}
+.presentacionContacto{
+	width: 1200px;
+	height: 500px;
+	background-color: #2e232373;
+	padding: 1rem;
+	padding-left: 3rem;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 8px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: white;
+	text-align: center;
+	box-shadow: 7px 13px 37px #000;
+	
+}
+.tituloContacto{
+	padding-top: 80px;
+	margin-bottom: 10px;
+	font-size: 3rem;
+}
+.redes{
+	padding-top: 4.5rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+	padding-bottom: 2rem;
+	color: rgb(17, 17, 97);
+}
+.containerContacto{
+	width: 100%;
+	max-width: 1200px;
+	height: 430px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: auto;
+}
+
+.containerContacto .cardContacto {
+	width: 330px;
+	height: 230px;
+	border-radius: 8px;
+	box-shadow: 0 2px 2px rgba(19, 18, 18, 0.9);
+	/* overflow: hidden; */
+	margin: 20px; 
+	text-align: center;
+	transition: all 0.25s;
+	position: relative;
+}
+
+.containerContacto .cardContacto:hover{
+	/* transform: translateY(-55px); */
+	transform: scale(1.0);
+	box-shadow: 0 12px 16px rgba(0, 0, 0, 2);
+}
+.containerContacto .cardContacto .contacto{
+	font-weight: 400;
+	color: rgb(245, 239, 239);
+}
+
+.footerContactos {
+	background-color: rgba(212, 203, 203, 0.034);
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+}
